@@ -14,7 +14,7 @@ python3 -m venv venv
 source venv/bin/activate
 
 # install requirements.txt
-pip install -r /home/ubuntu/django-aws_cicd/requirements.txt
+pip3 install -r /home/ubuntu/django-aws_cicd/requirements.txt
 
 # run server
 screen -d -m python3 manage.py runserver 0:8000
