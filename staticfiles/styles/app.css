@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,700;0,800;0,900;1,400&display=swap');
+
+:root {
+    --color-main: #000000;
+    --color-main-light: #e6faff;
+    --color-sub: #3f4156;
+    --color-sub-light: #51546e;
+    --color-sub-lighter: #ededfd;
+    --color-text: #737373;
+    --color-gray: #8b8b8b;
+    --color-light: #f3f3f3;
+    --color-light-gray: #767676;
+    --color-bg: #f8fafd;
+    --color-white: #fffefd;
+    --color-white-light: #f3f3f3;
+    --color-success: #359e64;
+    --color-success-bg: #def8e8;
+    --color-error: #fc4b0b;
+    --color-error-bg: #fff2ee;
+    --font-base: 'Poppins', arial, helvetica, 'Segoe UI', roboto, ubuntu, sans-serif;
+    --font-monospace: 'Fira Code', 'Courier New', courier, monospace;
+    --font-regular: 300;
+    --font-medium: 500;
+    --font-bold: 700;
+    --generic-shadow: 1px 1px 5px #00000010;
+    --generic-transition: all 0.3s ease-in-out;
+    --header-height: 85px;
+}
+
+body, html {
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+}
+
+/* Header */
+.site__header {
+    background: var(--color-main);
+}
+
+.navbar-brand {
+    color: white;
+}
+
+.site-selection {
+    max-width: 300px;
+}

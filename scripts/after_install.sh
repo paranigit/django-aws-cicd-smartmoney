@@ -10,8 +10,8 @@ sudo pkill -f runserver
 cd /home/ubuntu/django-aws-cicd-smartmoney/
 
 # activate virtual environment
-python3 -m venv venv
-source venv/bin/activate
+python3 -m venv env
+source env/bin/activate
 
 install requirements.txt
 pip install -r /home/ubuntu/django-aws-cicd-smartmoney/requirements.txt
