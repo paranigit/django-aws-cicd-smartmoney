@@ -16,10 +16,5 @@ source venv/bin/activate
 install requirements.txt
 pip install -r /home/ubuntu/django-aws-cicd-smartmoney/requirements.txt
 
-# run migrations
-# screen -d -m python3 manage.py makemigrations
-# screen -d -m python3 manage.py migrate
-# screen -d -m python3 manage.py collectstatic
-
 # run server
 screen -d -m python3 manage.py runserver 0:8000
