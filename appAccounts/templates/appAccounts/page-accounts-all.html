@@ -1,0 +1,20 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+<main>
+    <div id="app">
+        <div class="container py-5">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="/">Home</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Accounts</li>
+                </ol>
+            </nav>
+            <h3>Accounts</h3>
+            <p>Congratulations! Your have successfully deployed django application using AWS DevOps CI-CD pipeline...</p>
+        </div>
+    </div>
+</main>
+<script src="{% static 'scripts/vue-display-graph.js' %}"></script>
+
+{% endblock content %}

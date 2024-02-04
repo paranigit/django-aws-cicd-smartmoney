@@ -1,0 +1,43 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block pageSeo %}
+<style>
+   
+</style>
+{% endblock %}
+
+{% block content %}
+<main>
+    <div class="container py-5">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item active" aria-current="page">Home</li>
+            </ol>
+        </nav>
+        <h3>Dashboard</h3>
+        <div class="container">
+            <div class="row">
+                <div class="col-2 p-5">
+                    <a class="btn btn-primary" 
+                    href="/accounts" 
+                    role="button" 
+                    style="height: 50px; width: 100%">Accounts</a>
+                </div>
+                <div class="col-2 p-5">
+                    <a class="btn btn-primary" 
+                    href="/accounts/status-parameters" 
+                    role="button" 
+                    style="height: 50px; width: 100%">Status Parameters</a>
+                </div>
+                <div class="col-2 p-5">
+                    <a class="btn btn-primary" 
+                    href="/accounts/display-graph/eval" 
+                    role="button" 
+                    style="height: 50px; width: 100%">Performance Graphs</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock content %}

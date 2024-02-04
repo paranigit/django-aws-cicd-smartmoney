@@ -1,0 +1,29 @@
+{% load static %}
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">Smart Money</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          {% with request.resolver_match.url_name as url_name %}
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link {% if url_name == 'page-home' %}active{% endif %}" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {% if url_name == 'page-accounts-all' %}active{% endif %}" href="{% url 'page-accounts-all' %}">Accounts</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {% if url_name == 'page-status-parameters' %}active{% endif %}" href="{% url 'page-status-parameters' %}">Status Parameters</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {% if url_name == 'page-display-graph' %}active{% endif %}" href="{% url 'page-display-graph' 'eval' %}">Graphs</a>
+            </li>
+          </ul>
+          {% endwith %}
+        </div>
+      </div>
+    </nav>
+</header>

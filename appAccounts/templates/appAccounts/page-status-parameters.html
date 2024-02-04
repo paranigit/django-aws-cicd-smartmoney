@@ -1,0 +1,51 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+<main>
+    <div id="app">
+        <div class="container py-5">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="/">Home</a></li>
+                  <li class="breadcrumb-item"><a href="/accounts">Accounts</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Status Parameters</li>
+                </ol>
+            </nav>
+            <h3>Status Parameters</h3>
+            <div class="d-flex justify-content-between mb-3">
+                <div class="input-group">
+                    <span class="input-group-text" id="basic-addon3">Timezone</span>
+                    <select class="form-select site-selection"
+                        ref="tzSelection" 
+                        v-on:change="changeGraphTimezone($event)">
+                        {% for option in timezones %}
+                            <option value="{{ option }}"
+                            {% if option == processing_tz %}selected="selected"{% endif %}>{{ option }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <select class="form-select site-selection float-end" 
+                    ref="graphKeySelection" 
+                    v-on:change="changeGraphMetric($event)">
+                    {% for option in key_options %}
+                        <option value="{{ option.short_key }}"
+                        {% if option.short_key == graphkey %}selected="selected"{% endif %}>{{ option.key_description }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <h5 class="my-4">Graph - {{ graphkey_desp }} </h5>
+            
+            <div id="metricCharts">
+                {% for account in accounts %}
+                <metric-chart 
+                    compid="hist-{{ account.account_id }}" 
+                    dataurl="{% url 'get-graph-data' account.account_id graphkey %}?tz={{ processing_tz }}" 
+                    class="mb-5"></metric-chart>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</main>
+<script src="{% static 'scripts/vue-display-graph.js' %}"></script>
+
+{% endblock content %}
